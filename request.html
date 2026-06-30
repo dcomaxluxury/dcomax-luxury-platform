@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCOMAX LUXURY | Premium Sourcing Request</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --surface-color: #121212;
+            --border-color: #262626;
+            --text-main: #ffffff;
+            --text-muted: #8a8a8a;
+            --accent-gold: #d4af37;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container { max-width: 650px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 3rem; }
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .form-card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 4px;
+        }
+        .section-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-gold);
+            margin: 1.5rem 0 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .section-title:first-of-type { margin-top: 0; }
+        .form-group { margin-bottom: 1.25rem; }
+        label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.85rem;
+            font-size: 0.95rem;
+            border-radius: 2px;
+            transition: border-color 0.3s ease;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        button {
+            width: 100%;
+            background-color: transparent;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+            border-radius: 2px;
+        }
+        button:hover {
+            background-color: var(--accent-gold);
+            color: var(--bg-color);
+            font-weight: 600;
+        }
+        #status-box {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            font-size: 0.85rem;
+            border-radius: 2px;
+            display: none;
+            text-align: center;
+        }
+        .success { background: #1b4332; border: 1px solid #2d6a4f; color: #d8f3dc; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>DCOMAX LUXURY</h1>
+        <p>Bespoke Vehicle Procurement Request</p>
+    </header>
+
+    <div class="form-card">
+        <form id="sourcingForm">
+            <div class="section-title">Client Information</div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="client@domain.com">
+                </div>
+            </div>
+
+            <div class="section-title">Vehicle Specifications</div>
+            <div class="form-group">
+                <label for="vehicleModel">Year, Make, & Model</label>
+                <input type="text" id="vehicleModel" required placeholder="e.g., 2026 Mercedes-Benz G63 AMG">
+            </div>
+            
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="exteriorColor">Exterior Color</label>
+                    <input type="text" id="exteriorColor" placeholder="e.g., Obsidian Black">
+                </div>
+                <div class="form-group">
+                    <label for="interiorTrim">Interior Leather/Trim</label>
+                    <input type="text" id="interiorTrim" placeholder="e.g., Classic Red/Black Nappa">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="condition">Condition Requirement</label>
+                <select id="condition">
+                    <option value="brand-new">Brand New (0 km)</option>
+                    <option value="pre-owned">Exotic Pre-Owned (Certified)</option>
+                </select>
+            </div>
+
+            <div class="form-section-title section-title">Logistics</div>
+            <div class="form-group">
+                <label for="destination">Delivery Destination Port / City</label>
+                <input type="text" id="destination" value="Accra, Ghana" placeholder="e.g., Tema Port / Accra">
+            </div>
+
+            <div class="form-group">
+                <label for="additionalNotes">Special Bespoke Instructions</label>
+                <textarea id="additionalNotes" placeholder="List any specific optional packages, bulletproofing, or immediate delivery timelines required..."></textarea>
+            </div>
+
+            <button type="submit">Submit to AI Procurement</button>
+        </form>
+        
+        <div id="status-box"></div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('sourcingForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const statusBox = document.getElementById('status-box');
+        
+        const payload = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            vehicle: document.getElementById('vehicleModel').value,
+            exterior: document.getElementById('exteriorColor').value,
+            interior: document.getElementById('interiorTrim').value,
+            condition: document.getElementById('condition').value,
+            destination: document.getElementById('destination').value,
+            notes: document.getElementById('additionalNotes').value,
+            timestamp: new Date().toISOString()
+        };
+
+        statusBox.style.display = 'block';
+        statusBox.className = 'success';
+        statusBox.innerText = "Transmission received. AI CPO mapping global suppliers...";
+
+        console.log("Data packet prepared for AI Operational Hub:", payload);
+
+        // This payload is perfectly structured to link directly into a free automation webhook later.
+    });
+</script>
+</body>
+</html>
